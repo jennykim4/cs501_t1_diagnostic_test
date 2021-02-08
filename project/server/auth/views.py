@@ -45,17 +45,10 @@ class RegisterAPI(MethodView):
                     'status': 'success',
                     'message': 'Successfully registered.',
                     
-<<<<<<< HEAD
                     'auth_token': auth_token.decode()
                 }
             
                 # print (auth_token)
-=======
-                    'auth_token': auth_token
-                }
-            
-                print (auth_token)
->>>>>>> 3a23254d684483a0a43c57aae5c0658ea11bfa19
                 return make_response(jsonify(responseObject)), 201
 
             except Exception as e:
@@ -90,11 +83,7 @@ class ShowUsersAPI(MethodView):
     User List Resource
     """
 
-<<<<<<< HEAD
     def get(self): 
-=======
-    def get(self):
->>>>>>> 3a23254d684483a0a43c57aae5c0658ea11bfa19
         list_of_all_users = User.query.all()
         users = [
     		user.email for user in list_of_all_users
@@ -106,24 +95,11 @@ class ShowUsersAPI(MethodView):
 
 
 # define the API resources
-<<<<<<< HEAD
 users_view = ShowUsersAPI.as_view('ShowUsers_api')
-=======
-user_view = ShowUsersAPI.as_view('ShowUsers_api')
->>>>>>> 3a23254d684483a0a43c57aae5c0658ea11bfa19
 
 # add Rules for API Endpoints
 auth_blueprint.add_url_rule(
     '/users/index',
-<<<<<<< HEAD
     view_func=users_view,
     methods=['GET']
 )
-=======
-    view_func=user_view,
-    methods=['GET']
-)
-
-    methods=['POST', 'GET']
-)
->>>>>>> 3a23254d684483a0a43c57aae5c0658ea11bfa19
